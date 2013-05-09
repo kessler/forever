@@ -32,7 +32,7 @@ function start(options) {
     // Without this, `forever list` won't show the process, even though it
     // would still be running in the background unaffected.
     //
-    forever.startServer(monitor);
+    forever.startServer(monitor, process.argv.slice(3));
     
     //
     // Disconnect the IPC channel, letting this monitor's parent process know
